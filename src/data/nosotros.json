@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Sobre nosotros",
+  "titulo": "Quiénes somos",
+  "historia": "[HISTORIA — Texto por redactar. Párrafo narrativo: por qué se fundó la agencia, qué problema querían resolver. Aprox. 80–120 palabras. Debe sonar humano y auténtico, no corporativo.]",
+  "valores": [
+    "[Valor o forma de trabajar 1 — texto por redactar]",
+    "[Valor o forma de trabajar 2 — texto por redactar]",
+    "[Valor o forma de trabajar 3 — texto por redactar]"
+  ],
+  "nums": [
+    { "num": "120+",   "label": "proyectos" },
+    { "num": "40+",    "label": "clientes activos" },
+    { "num": "5 años", "label": "de experiencia" }
+  ],
+  "equipo": [
+    { "nombre": "[Nombre fundador/a]",  "cargo": "[Cargo]",  "bio": "[BIO — Texto por redactar. Rol, experiencia relevante, especialidad. 30–50 palabras.]" },
+    { "nombre": "[Nombre persona 2]",   "cargo": "[Cargo]",  "bio": "[BIO — Texto por redactar. Rol, especialidad, algo personal. 30–50 palabras.]" },
+    { "nombre": "[Nombre persona 3]",   "cargo": "[Cargo]",  "bio": "[BIO — Texto por redactar. Rol, especialidad, algo personal. 30–50 palabras.]" },
+    { "nombre": "[Nombre persona 4]",   "cargo": "[Cargo]",  "bio": "[BIO — Texto por redactar. Rol, especialidad, algo personal. 30–50 palabras.]" }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "label": "Agencia de Marketing Digital",
+  "h1_pre": "Conectamos tu marca con",
+  "h1_em": "resultados reales",
+  "subtitulo": "[SUBTÍTULO — Texto por redactar. Menciona los 3 servicios clave: CRM, e-commerce y contenido para redes sociales. Aprox. 25–30 palabras orientadas al beneficio del cliente.]",
+  "cta_primary": "Agenda tu diagnóstico gratis",
+  "cta_secondary": "Ver proyectos",
+  "stats": [
+    { "num": "+120", "label": "proyectos entregados" },
+    { "num": "3×",   "label": "ROI promedio en e-commerce" },
+    { "num": "98%",  "label": "retención de clientes" },
+    { "num": "5 años", "label": "de experiencia comprobada" }
+  ],
+  "tags": ["CRM & Automatización", "E-commerce", "Social Media", "Analytics"],
+  "logos_label": "Empresas que ya crecen con nosotros"
+}

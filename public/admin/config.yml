@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+locale: es
+
+collections:
+
+  - name: blog
+    label: "Blog"
+    label_singular: "Artículo"
+    folder: src/content/blog
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: slug,     label: "Slug (URL)",      widget: string }
+      - { name: title,    label: "Título",           widget: string }
+      - { name: date,     label: "Fecha",            widget: datetime, format: "YYYY-MM-DD" }
+      - { name: excerpt,  label: "Extracto",         widget: text }
+      - { name: category, label: "Categoría",        widget: select, options: ["CRM", "E-commerce", "Social Media", "Analytics"] }
+      - { name: minutos,  label: "Minutos de lectura", widget: number, default: 5 }
+      - { name: imagen,   label: "Imagen destacada", widget: image, required: false }
+      - { name: body,     label: "Contenido",        widget: markdown }
+
+  - name: servicios
+    label: "Servicios"
+    label_singular: "Servicio"
+    folder: src/content/servicios
+    create: false
+    fields:
+      - { name: slug,               label: "Slug",              widget: string }
+      - { name: orden,              label: "Orden",             widget: number }
+      - { name: icono,              label: "Emoji / Icono",     widget: string }
+      - { name: nombre,             label: "Nombre del servicio", widget: string }
+      - { name: descripcion_corta,  label: "Descripción corta (card)", widget: text }
+      - { name: entregables,        label: "Entregables",       widget: list }
+      - { name: cta,                label: "Texto del botón",   widget: string }
+      - { name: body,               label: "Descripción larga (página interna)", widget: markdown }
+
+  - name: casos
+    label: "Casos de éxito"
+    label_singular: "Caso"
+    folder: src/content/casos
+    create: true
+    fields:
+      - { name: slug,      label: "Slug",      widget: string }
+      - { name: cliente,   label: "Cliente",   widget: string }
+      - { name: industria, label: "Industria", widget: string }
+      - { name: reto,      label: "Reto inicial", widget: text }
+      - { name: solucion,  label: "Solución aplicada", widget: text }
+      - name: metricas
+        label: "Métricas"
+        widget: list
+        fields:
+          - { name: valor, label: "Valor (ej: +40%)", widget: string }
+          - { name: label, label: "Etiqueta",          widget: string }
+      - { name: imagen, label: "Imagen del proyecto", widget: image, required: false }
+      - { name: body,   label: "Descripción extendida", widget: markdown }

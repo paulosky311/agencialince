@@ -1,0 +1,194 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = 'Nexus Digital — Agencia de Marketing', description = 'Agencia especializada en CRM, e-commerce y contenido para redes sociales.' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content={description} />
+<title>{title}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style is:global>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0d0f14;
+  --bg2:       #13161e;
+  --bg3:       #1a1e28;
+  --card:      #1e2230;
+  --border:    rgba(255,255,255,0.07);
+  --accent:    #1de6b5;
+  --accent2:   #0fa87e;
+  --purple:    #7b6ef6;
+  --text:      #e8eaf0;
+  --muted:     #7a8099;
+  --faint:     #3a3f52;
+  --serif:     'DM Serif Display', Georgia, serif;
+  --sans:      'DM Sans', system-ui, sans-serif;
+  --radius:    12px;
+  --max:       1140px;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+/* NAV */
+nav.main-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 68px;
+  background: rgba(13,15,20,0.85); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-family: var(--serif); font-size: 22px; color: var(--accent); letter-spacing: -0.5px; text-decoration: none; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; transition: color .2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta { background: var(--accent); color: #0d0f14; padding: 9px 22px; border-radius: 6px; font-size: 14px; font-weight: 500; text-decoration: none; transition: background .2s; }
+.nav-cta:hover { background: var(--accent2); }
+
+/* BUTTONS */
+.btn-primary { background: var(--accent); color: #0d0f14; padding: 14px 30px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; transition: all .2s; display: inline-block; }
+.btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+.btn-ghost { color: var(--text); padding: 14px 30px; border-radius: 8px; font-size: 15px; font-weight: 400; text-decoration: none; border: 1px solid var(--border); transition: all .2s; display: inline-block; }
+.btn-ghost:hover { border-color: var(--faint); background: var(--bg3); }
+
+/* SECTION BASE */
+section { padding: 100px 48px; }
+.section-inner { max-width: var(--max); margin: 0 auto; }
+.section-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.section-h2 { font-family: var(--serif); font-size: clamp(32px, 4vw, 52px); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
+.section-sub { font-size: 17px; color: var(--muted); max-width: 560px; line-height: 1.75; margin-bottom: 56px; }
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
+
+/* SCROLL REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* FOOTER */
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 60px 48px 32px; }
+.footer-inner { max-width: var(--max); margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-brand .nav-logo { font-size: 20px; margin-bottom: 16px; display: block; }
+.footer-brand p { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 240px; }
+.footer-col h4 { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; color: var(--text); }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color .2s; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; }
+.footer-copy { font-size: 13px; color: var(--muted); }
+.footer-legal { display: flex; gap: 24px; }
+.footer-legal a { font-size: 13px; color: var(--muted); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+
+/* PAGE NAV DOTS */
+.page-nav { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); z-index: 99; display: flex; flex-direction: column; gap: 10px; }
+.page-nav a { width: 8px; height: 8px; border-radius: 50%; background: var(--faint); display: block; transition: background .2s, transform .2s; text-decoration: none; position: relative; }
+.page-nav a.active, .page-nav a:hover { background: var(--accent); transform: scale(1.4); }
+.page-nav a[title]:hover::before { content: attr(title); position: absolute; right: 18px; top: 50%; transform: translateY(-50%); background: var(--card); color: var(--text); font-size: 12px; padding: 4px 10px; border-radius: 4px; white-space: nowrap; border: 1px solid var(--border); }
+
+/* WIREFRAME BADGE */
+.wf-badge { position: fixed; bottom: 24px; right: 24px; z-index: 999; background: var(--accent); color: #0d0f14; font-size: 11px; font-weight: 500; padding: 8px 16px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+@media (max-width: 900px) {
+  nav.main-nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  section { padding: 70px 20px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .page-nav { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="main-nav">
+  <a href="/" class="nav-logo">Nexus Digital</a>
+  <ul class="nav-links">
+    <li><a href="/#servicios">Servicios</a></li>
+    <li><a href="/#casos">Casos</a></li>
+    <li><a href="/#nosotros">Nosotros</a></li>
+    <li><a href="/blog">Blog</a></li>
+  </ul>
+  <a href="/#contacto" class="nav-cta">Agenda una llamada</a>
+</nav>
+
+<slot />
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">Nexus Digital</a>
+        <p>[Tagline o descripción breve. Por redactar.]</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="/servicios/crm">[Servicio CRM]</a></li>
+          <li><a href="/servicios/ecommerce">[Servicio E-commerce]</a></li>
+          <li><a href="/servicios/social-media">[Servicio Social Media]</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/#nosotros">Nosotros</a></li>
+          <li><a href="/#casos">Casos de éxito</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Redes</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 [Nombre de la agencia]. Todos los derechos reservados.</p>
+      <div class="footer-legal">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos de uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="wf-badge">Wireframe v1.0</div>
+
+<script>
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+revealEls.forEach(el => obs.observe(el));
+
+// Active nav dots
+const sections = ['hero','logos','servicios','proceso','casos','testimonios','nosotros','blog','contacto'];
+const navDots   = document.querySelectorAll('.page-nav a');
+const sectEls   = sections.map(id => document.getElementById(id)).filter(Boolean);
+if (sectEls.length) {
+  const dotObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = sectEls.indexOf(e.target);
+        navDots.forEach(d => d.classList.remove('active'));
+        if (navDots[idx]) navDots[idx].classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+  sectEls.forEach(el => dotObs.observe(el));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero        from '../components/Hero.astro';
+import Servicios   from '../components/Servicios.astro';
+import Proceso     from '../components/Proceso.astro';
+import Casos       from '../components/Casos.astro';
+import Testimonios from '../components/Testimonios.astro';
+import Nosotros    from '../components/Nosotros.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+import Contacto    from '../components/Contacto.astro';
+---
+
+<Layout title="Nexus Digital — Agencia de Marketing Digital">
+
+  <!-- Dots nav (solo en index) -->
+  <nav class="page-nav" id="pageNav" aria-label="Navegación de secciones">
+    <a href="#hero"        title="Inicio"></a>
+    <a href="#logos"       title="Clientes"></a>
+    <a href="#servicios"   title="Servicios"></a>
+    <a href="#proceso"     title="Proceso"></a>
+    <a href="#casos"       title="Casos"></a>
+    <a href="#testimonios" title="Testimonios"></a>
+    <a href="#nosotros"    title="Nosotros"></a>
+    <a href="#blog"        title="Blog"></a>
+    <a href="#contacto"    title="Contacto"></a>
+  </nav>
+
+  <Hero />
+  <div class="section-divider"></div>
+  <Servicios />
+  <div class="section-divider"></div>
+  <Proceso />
+  <div class="section-divider"></div>
+  <Casos />
+  <Testimonios />
+  <div class="section-divider"></div>
+  <Nosotros />
+  <BlogPreview />
+  <div class="section-divider"></div>
+  <Contacto />
+
+</Layout>

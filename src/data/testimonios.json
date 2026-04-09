@@ -1,0 +1,24 @@
+{
+  "eyebrow": "Testimonios",
+  "titulo": "Lo que dicen quienes ya confiaron en nosotros",
+  "items": [
+    {
+      "texto": "[TESTIMONIO 1 — Obtener del cliente. Debe mencionar un resultado específico y medible. Aprox. 50–70 palabras.]",
+      "nombre": "[Nombre del cliente]",
+      "cargo":  "[Cargo]",
+      "empresa": "[Empresa]"
+    },
+    {
+      "texto": "[TESTIMONIO 2 — Obtener del cliente. Debe mencionar un resultado específico y medible. Aprox. 50–70 palabras.]",
+      "nombre": "[Nombre del cliente]",
+      "cargo":  "[Cargo]",
+      "empresa": "[Empresa]"
+    },
+    {
+      "texto": "[TESTIMONIO 3 — Obtener del cliente. Debe mencionar un resultado específico y medible. Aprox. 50–70 palabras.]",
+      "nombre": "[Nombre del cliente]",
+      "cargo":  "[Cargo]",
+      "empresa": "[Empresa]"
+    }
+  ]
+}
